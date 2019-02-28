@@ -1,7 +1,6 @@
 ﻿using GraphQL.Types;
 using GraphUserApi.Data;
 using GraphUserApi.Types;
-using System;
 
 namespace GraphUserApi.Queries
 {
@@ -22,16 +21,6 @@ namespace GraphUserApi.Queries
                 "job",
                 resolve: content => propertyData.GetJob(content.GetArgument<string>("id"))
             );
-
-            //Func<ResolveFieldContext, string, Job> func = (content, id) => propertyData.GetJob(id);
-
-            //FieldDelegate<JobType>(
-            //    "job",
-            //    arguments: new QueryArguments(
-            //        new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "id", Description = "id of the job" }
-            //    ),
-            //    resolve: func
-            //);
         }
     }
 }
