@@ -9,6 +9,8 @@ namespace GraphUserApi.Mutations.Inputs
         {
             Name = "JobInput";
             Field(x => x.Name);
+
+            Field<CompanyInputType>("company");
         }
     }
 }

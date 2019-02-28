@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GraphiQl;
+﻿using GraphiQl;
 using GraphQL;
 using GraphQL.Types;
 using GraphUserApi.Data;
@@ -13,12 +9,9 @@ using GraphUserApi.Schema;
 using GraphUserApi.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace GraphUserApi
 {
@@ -39,6 +32,9 @@ namespace GraphUserApi
             services.AddSingleton<JobData>();
             services.AddSingleton<JobType>();
             services.AddSingleton<JobInputType>();
+
+            services.AddSingleton<CompanyType>();
+            services.AddSingleton<CompanyInputType>();
 
             services.AddSingleton<PropertyData>();
             services.AddSingleton<PropertyType>();

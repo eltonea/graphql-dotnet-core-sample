@@ -12,7 +12,7 @@ namespace GraphUserApi.Mutations.Inputs
             Field(x => x.LastName, nullable: true);
             Field(x => x.Age, nullable: true);
 
-            Field(x => x.Job);
+            Field<JobInputType>("job");
         }
     }
 }

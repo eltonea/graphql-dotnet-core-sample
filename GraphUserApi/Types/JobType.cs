@@ -16,6 +16,7 @@ namespace GraphUserApi.Types
 
             Field(x => x.Name);
             Field(x => x.Since);
+            Field<CompanyType>("company");
         }
     }
 
@@ -32,5 +33,6 @@ namespace GraphUserApi.Types
         public string Id { get; set; }
         public string Name { get; set; }
         public int Since { get; set; }
+        public Company Company { get; set; }
     }
 }
