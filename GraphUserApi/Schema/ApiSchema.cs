@@ -12,8 +12,8 @@ namespace GraphUserApi.Schema
     {
         public ApiSchema(IDependencyResolver resolver): base(resolver)
         {
-            Query = resolver.Resolve<PropertyQuery>();
-            Mutation = resolver.Resolve<PropertyMutation>();
+            Query = resolver.Resolve<UserQuery>();
+            Mutation = resolver.Resolve<UserMutation>();
         }
     }
 }

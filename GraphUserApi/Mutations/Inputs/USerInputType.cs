@@ -3,11 +3,12 @@ using GraphUserApi.Types;
 
 namespace GraphUserApi.Mutations.Inputs
 {
-    public class PropertyInputType : InputObjectGraphType<Property>
+    public class UserInputType : InputObjectGraphType<User>
     {
-        public PropertyInputType()
+        public UserInputType()
         {
-            Name = "PropertyInput";
+            Name = "UserInput";
+            Field(x => x.Id, nullable: true);
             Field(x => x.Name);
             Field(x => x.LastName, nullable: true);
             Field(x => x.Age, nullable: true);

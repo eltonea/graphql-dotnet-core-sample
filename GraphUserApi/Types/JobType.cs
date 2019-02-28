@@ -7,7 +7,7 @@ namespace GraphUserApi.Types
     {
         public JobType(JobData data)
         {
-            Field<PropertyType>(
+            Field<UserType>(
                 "jobs",
                 resolve: context => data.GetAll()
             );

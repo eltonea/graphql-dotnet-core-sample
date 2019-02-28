@@ -36,11 +36,11 @@ namespace GraphUserApi
             services.AddSingleton<CompanyType>();
             services.AddSingleton<CompanyInputType>();
 
-            services.AddSingleton<PropertyData>();
-            services.AddSingleton<PropertyType>();
-            services.AddSingleton<PropertyQuery>();
-            services.AddSingleton<PropertyMutation>();
-            services.AddSingleton<PropertyInputType>();
+            services.AddSingleton<UserData>();
+            services.AddSingleton<UserType>();
+            services.AddSingleton<UserQuery>();
+            services.AddSingleton<UserMutation>();
+            services.AddSingleton<UserInputType>();
 
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new ApiSchema(new FuncDependencyResolver(type => sp.GetService(type))));

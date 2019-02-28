@@ -5,34 +5,36 @@ using GraphUserApi.Data;
 
 namespace GraphUserApi.Types
 {
-    public class PropertyType : ObjectGraphType<Property>, IGraphType
+    public class UserType : ObjectGraphType<User>, IGraphType
     {
-        public PropertyType(PropertyData data)
+        public UserType(UserData data)
         {
-            Field<PropertyType>(
-                "properties",
+            Field<UserType>(
+                "users",
                 resolve: context => data.GetAll()
             );
 
-            Name = "PropertyType";
+            Name = "UserType";
 
+            Field(x => x.Id);
             Field(x => x.Name);
             Field(x => x.LastName);
             Field(x => x.Age);
 
             Field<JobType>(
                 "job",
-                resolve: context => data.GetJob(context.Source.Id)
+                resolve: context => context.Source.Job
+                //resolve: context => data.GetJob(context.Source.Id) //TODO: get from another source
             );
         }
     }
 
-    public class Property
+    public class User
     {
-        public Property() { }
+        public User() { }
 
 
-        public Property(string id, string name, string lastName, int age)
+        public User(string id, string name, string lastName, int age)
         {
             Id = id;
             Age = age;
@@ -40,7 +42,7 @@ namespace GraphUserApi.Types
             LastName = lastName;
         }
 
-        public Property(string id, string name, string lastName, int age, Job job)
+        public User(string id, string name, string lastName, int age, Job job)
         {
             Id = id;
             Age = age;
